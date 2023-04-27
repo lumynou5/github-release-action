@@ -1,0 +1,52 @@
+name: Lumynous GitHub Release Action
+description: An action to create GitHub release.
+author: Lumynous
+branding:
+  icon: archive
+  color: blue
+inputs:
+  token:
+    description: The GitHub token.
+    required: true
+  changelog:
+    description: The path to the changelog.
+    required: false
+    default: CHANGELOG.md
+  tag-template:
+    description: The template of the Git tag.
+    required: false
+    default: v{version}
+  major-tag-template:
+    description: The template of the Git tag of the major version.
+    required: false
+    default: v{major}
+  name-template:
+    description: The template of the GitHub release.
+    required: false
+    default: v{version}
+  is-draft:
+    description: If the GitHub release is a draft.
+    required: false
+    default: false
+outputs:
+  version:
+    description: The version.
+  major:
+    description: The major version.
+  minor:
+    description: The minor version.
+  patch:
+    description: The patch version.
+  prerelease:
+    description: The prerelease name or an empty string.
+  build:
+    description: The build number or an empty string.
+  release-date:
+    description: The release date.
+  html-url:
+    description: The URL to the page of the GitHub release.
+  upload-url:
+    description: The URL to upload assets for the GitHub release.
+runs:
+  using: docker
+  image: Dockerfile

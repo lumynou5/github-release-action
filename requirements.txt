@@ -1,0 +1,2 @@
+keepachangelog==2.0.0.dev5
+PyGithub==1.58.0
