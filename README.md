@@ -62,6 +62,10 @@ The following list shows the arguments can be used in the template.
 
 ## Outputs
 The outputs include all the arguments of templates and the following items in addition.
+- `tag`
+  The name of the Git tag.
+- `major-tag`
+  The name of the Git tag of the major version.
 - `html-url`
   The URL to the page of the GitHub release.
 - `upload-url`
