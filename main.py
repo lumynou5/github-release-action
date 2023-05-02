@@ -44,13 +44,16 @@ data = {
     'release-date': change['metadata']['release_date'],
 }
 
-res = repo.create_git_release(fillTemplate(env['INPUT_TAG-TEMPLATE'], data),
-                              fillTemplate(env['INPUT_NAME-TEMPLATE'], data),
-                              change['raw'],
-                              env['INPUT_IS-DRAFT'] == 'true',
-                              data['prerelease'] is not None,
-                              env['GITHUB_SHA'])
+# Create release.
+release = repo.create_git_release(
+    fillTemplate(env['INPUT_TAG-TEMPLATE'], data),
+    fillTemplate(env['INPUT_NAME-TEMPLATE'], data),
+    change['raw'],
+    env['INPUT_IS-DRAFT'] == 'true',
+    data['prerelease'] is not None,
+    env['GITHUB_SHA'])
 
+# Move major tag.
 major_name = fillTemplate(env['INPUT_MAJOR-TAG-TEMPLATE'], data)
 major = repo.get_git_ref(f'tags/{major_name}')
 if major.ref is not None:
@@ -58,9 +61,9 @@ if major.ref is not None:
 else:
     repo.create_git_ref(f'refs/tags/{major_name}', env['GITHUB_SHA'])
 
-data['html-url'] = res.html_url
-data['upload-url'] = res.upload_url
-
+# Output.
+data['html-url'] = release.html_url
+data['upload-url'] = release.upload_url
 with open(env['GITHUB_OUTPUT'], 'a') as out:
     for (key, val) in data.items():
         print(f'{key}={val if val is not None else ""}', file=out)
