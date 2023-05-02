@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 - Python used to be unable to find the file.
 
-## [1.0.0] - 2023-04-27
+## [1.0.0] - 2023-04-27 [YANKED]
 ### Added
 - First release.
 
