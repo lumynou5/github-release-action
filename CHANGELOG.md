@@ -4,6 +4,7 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
 - Outputs the names of the Git tags of the release and the major version; i.e., the filled templates are outputed.
+- Input `major-tag-template` can be empty for no major tag now.
 
 ## [1.0.1] - 2023-05-01
 ### Fixed
