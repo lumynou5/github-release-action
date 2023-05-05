@@ -43,6 +43,10 @@ outputs:
     description: The build number or an empty string.
   release-date:
     description: The release date.
+  tag:
+    description: The name of the Git tag.
+  major-tag:
+    description: The name of the Git tag of the major version.
   html-url:
     description: The URL to the page of the GitHub release.
   upload-url:

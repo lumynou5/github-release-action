@@ -38,7 +38,7 @@ If there isn't a tag of the major version, it'll be created.
 - `tag-template`
   The template of the Git tag. Default: `v{version}`.
 - `major-tag-template`
-  The template of the Git tag of the major version. Default: `v{major}`.
+  The template of the Git tag of the major version. Default: `v{major}`. Empty for no major tag.
 - `name-template`
   The template of the GitHub release. Default: `v{version}`.
 - `is-draft`
@@ -62,6 +62,10 @@ The following list shows the arguments can be used in the template.
 
 ## Outputs
 The outputs include all the arguments of templates and the following items in addition.
+- `tag`
+  The name of the Git tag.
+- `major-tag`
+  The name of the Git tag of the major version.
 - `html-url`
   The URL to the page of the GitHub release.
 - `upload-url`
