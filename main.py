@@ -45,7 +45,7 @@ data = {
 }
 
 # Create release.
-tag = fillTemplate(env['INPUT_TAG-TEMPLATE'], data),
+tag = fillTemplate(env['INPUT_TAG-TEMPLATE'], data)
 release = repo.create_git_release(
     tag,
     fillTemplate(env['INPUT_NAME-TEMPLATE'], data),

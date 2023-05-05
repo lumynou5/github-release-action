@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Fixed
+- Accidently used tuple for tag name.
+
 ## [1.1.0] - 2023-05-05
 ### Added
 - Outputs the names of the Git tags of the release and the major version; i.e., the filled templates are outputed.
