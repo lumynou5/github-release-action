@@ -24,11 +24,11 @@ jobs:
 ```
 
 In this example workflow, it'll create a release whenever push to `main` branch.
-The version will be set according to the changelog following [Keep a Changelog](https://keepachangelog.com/)
-and [Semantic Versioning](https://semver.org/).
+The version and the release note will be captured from the changelog following
+[Keep a Changelog](https://keepachangelog.com/) and [Semantic Versioning](https://semver.org/).
+And a Git tag will be created for the major revision, see [Inputs](#Inputs) for more information.
 
-Specifically, a release is created and the tag of the corresponding major version is moved onto that version.
-If there isn't a tag of the major version, it'll be created.
+This is useful to automatically publish releases on pushing to the stable branch when using Git flow, etc.
 
 ## Inputs
 - `token` (required)
@@ -70,3 +70,7 @@ The outputs include all the arguments of templates and the following items in ad
   The URL to the page of the GitHub release.
 - `upload-url`
   The URL to upload assets for the GitHub release.
+
+## License
+The source code is distributed under the MIT license.
+See [LICENSE.md](LICENSE.md) for further information.
