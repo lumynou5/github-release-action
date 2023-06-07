@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Release
         # Use the latest version.
         uses: lumynou5/github-release-action@main
