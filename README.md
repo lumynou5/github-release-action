@@ -11,6 +11,7 @@ on:
 
 jobs:
   release:
+    if: github.repository == 'your-name/your-repository'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
