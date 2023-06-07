@@ -5,6 +5,7 @@ on:
 
 jobs:
   release:
+    if: github.repository == 'lumynou5/github-release-action'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
