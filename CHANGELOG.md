@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Fixed
+- Templates using multiple parameters work as expected now.
+
 ## [1.1.1] - 2023-05-05
 ### Fixed
 - Accidently used tuple for tag name.

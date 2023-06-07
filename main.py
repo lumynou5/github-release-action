@@ -13,7 +13,7 @@ def fillTemplate(template, data):
     i = 0
     while i < len(template):
         if template[i] == '{':
-            end = template.find('}')
+            end = template.find('}', i)
             if end == -1:
                 result += template[i:]
                 break
