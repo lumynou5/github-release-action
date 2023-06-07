@@ -44,7 +44,10 @@ This is useful to automatically publish releases on pushing to the stable branch
 - `is-draft`
   If the GitHub release is a draft. Default: `false`.
 
-The following list shows the arguments can be used in the template.
+The following list shows the parameters that can be used in templates.
+To use parameters, add a parameter name wrapping with braces to your template,
+and it will be replaced with data from your changelog;
+i.e. `{parameter-name}` will be replaced with the corresponding value.
 - `version`
   The version.
 - `major`
@@ -61,7 +64,7 @@ The following list shows the arguments can be used in the template.
   The release date.
 
 ## Outputs
-The outputs include all the arguments of templates and the following items in addition.
+The outputs include all the parameters of templates and the following items in addition.
 - `tag`
   The name of the Git tag.
 - `major-tag`
