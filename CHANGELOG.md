@@ -2,6 +2,8 @@
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+### Added
+- Minor tag.
 ### Fixed
 - Templates using multiple parameters work as expected now.
 

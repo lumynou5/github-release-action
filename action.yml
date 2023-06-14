@@ -20,6 +20,10 @@ inputs:
     description: The template of the Git tag of the major version.
     required: false
     default: v{major}
+  minor-tag-template:
+    description: The template of the Git tag of the major version.
+    required: false
+    default: v{major}.{minor}
   name-template:
     description: The template of the GitHub release.
     required: false
