@@ -38,7 +38,8 @@ This is useful to automatically publish releases on pushing to the stable branch
 - `tag-template`
   The template of the Git tag. Default: `v{version}`.
 - `major-tag-template`
-  The template of the Git tag of the major version. Default: `v{major}`. Empty for no major tag.
+  The template of the Git tag of the major version. Doesn't perform if the major version is 0.
+  Default: `v{major}`. Empty for no major tag.
 - `minor-tag-template`
   The template of the Git tag of the minor version. Default: `v{maojr}.{minor}`. Empty for no minor tag.
 - `name-template`

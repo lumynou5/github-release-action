@@ -55,7 +55,7 @@ release = repo.create_git_release(
     env['GITHUB_SHA'])
 
 # Move major tag.
-if env['INPUT_MAJOR-TAG-TEMPLATE'] != '':
+if env['INPUT_MAJOR-TAG-TEMPLATE'] != '' and data['major'] != 0:
     major_tag = fillTemplate(env['INPUT_MAJOR-TAG-TEMPLATE'], data)
     major = repo.get_git_ref(f'tags/{major_tag}')
     if major.ref is not None:
