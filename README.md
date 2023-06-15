@@ -17,8 +17,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Release
-        # Use the latest version.
-        uses: lumynou5/github-release-action@main
+        uses: lumynou5/github-release-action@v1
         with:
           token: ${{github.token}}
 ```
