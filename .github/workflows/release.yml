@@ -5,12 +5,13 @@ on:
 
 jobs:
   release:
+    if: github.repository == 'lumynou5/github-release-action'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      
+
       - name: Release
-        uses: lumynou5/github-release-action@main
+        uses: lumynou5/github-release-action@v1
         with:
           token: ${{github.token}}

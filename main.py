@@ -13,7 +13,7 @@ def fillTemplate(template, data):
     i = 0
     while i < len(template):
         if template[i] == '{':
-            end = template.find('}')
+            end = template.find('}', i)
             if end == -1:
                 result += template[i:]
                 break
@@ -55,7 +55,7 @@ release = repo.create_git_release(
     env['GITHUB_SHA'])
 
 # Move major tag.
-if env['INPUT_MAJOR-TAG-TEMPLATE'] != '':
+if env['INPUT_MAJOR-TAG-TEMPLATE'] != '' and data['major'] != 0:
     major_tag = fillTemplate(env['INPUT_MAJOR-TAG-TEMPLATE'], data)
     major = repo.get_git_ref(f'tags/{major_tag}')
     if major.ref is not None:
@@ -65,9 +65,21 @@ if env['INPUT_MAJOR-TAG-TEMPLATE'] != '':
 else:
     major_tag = ''
 
+# Move minor tag.
+if env['INPUT_MINOR-TAG-TEMPLATE'] != '':
+    minor_tag = fillTemplate(env['INPUT_MINOR-TAG-TEMPLATE'], data)
+    minor = repo.get_git_ref(f'tags/{minor_tag}')
+    if minor.ref is not None:
+        minor.edit(env['GITHUB_SHA'])
+    else:
+        repo.create_git_ref(f'refs/tags/{minor_tag}', env['GITHUB_SHA'])
+else:
+    minor_tag = ''
+
 # Output.
 data['tag'] = tag
 data['major-tag'] = major_tag
+data['minor-tag'] = minor_tag
 data['html-url'] = release.html_url
 data['upload-url'] = release.upload_url
 with open(env['GITHUB_OUTPUT'], 'a') as out:
