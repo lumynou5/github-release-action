@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Minor tag.
 ### Changed
-- Major tag of major version 0.
+- Major tag of major version 0 is no longer created or moved.
 ### Fixed
 - Templates using multiple parameters work as expected now.
 
