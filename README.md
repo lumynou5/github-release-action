@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Release
-        uses: lumynou5/github-release-action@v1
+        uses: lumynou5/github-release-action@v2
         with:
           token: ${{github.token}}
           assets: |
